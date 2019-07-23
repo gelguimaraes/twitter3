@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Arial Rounded MT Bold";
+}
+
+/* Cria colunas, cada uma com 33% do espaço total, uma ao lado da outra */
+.column {
+  float: left;
+  width: 33%;
+  padding: 10px;
+  height: 600px;
+}
+
+/* limpa a área após as colunas */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

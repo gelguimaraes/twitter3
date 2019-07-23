@@ -1,0 +1,28 @@
+<mat-form-field>
+  <input size="70" matInput value="" placeholder="No que você está pensando?" [(ngModel)]="post.texto">
+</mat-form-field>
+
+<button mat-mini-fab (click)="enviarPost()">
+  <mat-icon>send</mat-icon>
+</button>
+
+<div class="row">
+  <div class="column" style="background-color: beige">
+    <strong>Posts Públicos:</strong>
+    <mat-card-content>
+      <mat-card *ngFor="let post of posts | async"><label>{{post.texto}}</label></mat-card>
+    </mat-card-content>
+  </div>
+  <div class="column" style="background-color: aliceblue">
+    <strong>Posts Sábado Temático:</strong>
+    <mat-card-content>
+      <mat-card *ngFor="let post of postsSabadoTematico | async"><label>{{post.texto}}</label></mat-card>
+    </mat-card-content>
+  </div>
+  <div class="column" style="background-color: antiquewhite">
+    <strong>Mensagens Diretas:</strong>
+    <mat-card-content>
+      <mat-card *ngFor="let msg of msgDireta | async"><label>{{msg.texto}}</label><br><label>Para: {{msg.paraUsuario}}</label></mat-card>
+    </mat-card-content>
+  </div>
+</div>
